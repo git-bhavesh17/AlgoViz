@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AlgoViz - Graph Algorithm Visualizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Graph Algorithm Visualizer</h1>
+  </header>
+
+  <main>
+    <div class="controls">
+      <button onclick="addNode()">➕ Add Node</button>
+      <button onclick="addEdge()">➕ Add Edge</button>
+      <button onclick="resetGraph()">⏹ Reset</button>
+      <button onclick="generateRandomGraph()">🎲 Random Graph</button>
+      <select id="algoSelect">
+        <option value="astar">A* Search</option>
+        <option value="bfs">Breadth-First Search</option>
+        <option value="dfs">Depth-First Search</option>
+      </select>
+      <button onclick="runSimulation()">▶ Run</button>
+    </div>
+    <div id="network"></div>
+    <div id="explanation"></div>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
